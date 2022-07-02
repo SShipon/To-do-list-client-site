@@ -6,6 +6,8 @@ import AddTodo from "./components/Todo/AddTodo";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./components/Login/RequireAuth";
+import Calendar from "./components/Calendar/Calendar.jsx";
+import Footer from "./components/Shared/Footer/Footer.jsx";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/calendar" element={<Calendar></Calendar>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );

@@ -16,19 +16,28 @@ const Header = () => {
       <li>
         <NavLink to="/">Home</NavLink>{" "}
       </li>
-      { user && <li>
-        <NavLink to="/addtodo">Add Todo</NavLink>{" "}
-      </li>}
+      <li>
+        <NavLink to="/calendar">Calendar</NavLink>{" "}
+      </li>
+      {user && (
+        <li>
+          <NavLink to="/addtodo">Add Todo</NavLink>{" "}
+        </li>
+      )}
 
-     { user && <li>
-        <Link to="/">
-          <AiOutlineUser />
-          {user?.email}
-        </Link>{" "}
-      </li>}
+      {user && (
+        <li>
+          <Link to="/">
+            <AiOutlineUser />
+            {user?.email}
+          </Link>{" "}
+        </li>
+      )}
       <li>
         {user ? (
-          <button className="btn btn-ghost" onClick={handleSignOut}>sign out</button>
+          <button className="btn btn-ghost" onClick={handleSignOut}>
+            sign out
+          </button>
         ) : (
           <NavLink to="/login">Login</NavLink>
         )}
